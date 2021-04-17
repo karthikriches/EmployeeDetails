@@ -16,7 +16,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate=self
         tableView.dataSource=self
-        tableView.register(UINib(nibName: "TitleCell", bundle: nil), forCellReuseIdentifier: "TitleCell")
+        tableView.register(
+            UINib(nibName: "TitleCell", bundle: nil),
+            forCellReuseIdentifier: "TitleCell")
         if !DBManager.shared.readData().isEmpty  {
             users = DBManager.shared.readData()
             print("from DB")
